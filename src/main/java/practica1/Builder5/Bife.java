@@ -8,7 +8,7 @@ public class Bife extends BuilderParrillada {
 
     @Override
     public void buildSaborSoda() {
-        parrillada.setSaborDeRefresco("Cocacola");
+        parrillada.setSaborDeRefresco("Coca Cola");
     }
 
     @Override

@@ -3,7 +3,7 @@ package practica1.Builder5;
 public class Lomito extends BuilderParrillada {
     @Override
     public void buildTipoDeCarne() {
-        parrillada.setTipoDeCarne("CLomito");
+        parrillada.setTipoDeCarne("Lomito");
     }
 
     @Override
