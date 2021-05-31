@@ -8,9 +8,9 @@ public class Cliente {
             public void run() {
                 PagoMatricula singleton = PagoMatricula.getInstance();
                 Estudiante e = new Estudiante();
-                e.setCi(6724567);
-                e.setNombre("Jose");
-                singleton.pagar(e, "16:00", "10000");
+                e.setCi(123);
+                e.setNombre("sdafe");
+                singleton.pagar(e, "4:00", 10000);
                 singleton.mostrarInfo();
                 System.out.println("");
             }
@@ -21,11 +21,12 @@ public class Cliente {
             public void run() {
                 PagoMatricula singleton = PagoMatricula.getInstance();
                 Estudiante e = new Estudiante();
-                e.setCi(1825376);
-                e.setNombre("Antonio");
-                singleton.pagar(e, "17:00", "8750");
+                e.setCi(123);
+                e.setNombre("gsg");
+                singleton.pagar(e, "5:00", 1111);
                 singleton.mostrarInfo();
                 System.out.println("");
+
             }
         });
         Thread thread3 = new Thread(new Runnable() {
@@ -33,11 +34,12 @@ public class Cliente {
             public void run() {
                 PagoMatricula singleton = PagoMatricula.getInstance();
                 Estudiante e = new Estudiante();
-                e.setCi(8725096);
-                e.setNombre("Felipe");
-                singleton.pagar(e, "18:00", "6533");
+                e.setCi(123);
+                e.setNombre("aaaa");
+                singleton.pagar(e, "4:56", 222);
                 singleton.mostrarInfo();
                 System.out.println("");
+
             }
         });
         Thread thread4 = new Thread(new Runnable() {
@@ -45,11 +47,12 @@ public class Cliente {
             public void run() {
                 PagoMatricula singleton = PagoMatricula.getInstance();
                 Estudiante e = new Estudiante();
-                e.setCi(6724567);
-                e.setNombre("Jose");
-                singleton.pagar(e, "16:00", "10000");
+                e.setCi(123);
+                e.setNombre("sdafe");
+                singleton.pagar(e, "4:00", 10000);
                 singleton.mostrarInfo();
                 System.out.println("");
+
             }
         });
 
@@ -57,5 +60,7 @@ public class Cliente {
         thread2.start();
         thread3.start();
         thread4.start();
+
     }
+
 }

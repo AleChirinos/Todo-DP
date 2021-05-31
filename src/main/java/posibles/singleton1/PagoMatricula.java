@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 public class PagoMatricula {
-
     private static PagoMatricula instance = null;
     private Map<String, String> matriculacion = new HashMap<String, String>();
+    private Map<String, Integer> monto = new HashMap<String, Integer>();
     private List<Estudiante> estudiantes = new LinkedList<>();
 
-    public PagoMatricula() {}
+    public PagoMatricula() {
+
+    }
 
     public static synchronized void makeInstance() {
         if (instance == null)
@@ -24,10 +26,14 @@ public class PagoMatricula {
         return instance;
     }
 
-    public synchronized void pagar(Estudiante e, String hora, String monto) {
-        if (!matriculacion.containsKey(e.nombre))
+    public synchronized void pagar(Estudiante e, String hora, int monto) {
+        if (!matriculacion.containsKey(e.nombre)) {
+            this.monto.put(e.nombre, monto);
             estudiantes.add(e);
-        matriculacion.put(e.nombre, "Hora: " + hora + " Monto: " + monto);
+        } else {
+            this.monto.put(e.nombre, monto+this.monto.get(e.nombre));
+        }
+        matriculacion.put(e.nombre, "Hora: " + hora);
 
     }
 
@@ -36,6 +42,7 @@ public class PagoMatricula {
             System.out.println("Nombre " + e.nombre);
             System.out.println("Ci: " + e.ci);
             System.out.println(matriculacion.get(e.nombre));
+            System.out.println("Monto: "+monto.get(e.nombre));
         }
     }
 
